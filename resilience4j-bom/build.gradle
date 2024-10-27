@@ -16,14 +16,17 @@ def url = "https://resilience4j.readme.io"
 publishing {
     publications {
         resilience4j(MavenPublication) {
-           from components.javaPlatform
+            from components.javaPlatform
             pom.withXml {
-                def devs = ['RobWin': 'Robert Winkler',
-                            'storozhukBM': 'Bogdan Storozhuk',
-                            'Romeh': 'Mahmoud Romeh',
-                            'dlsrb6342': 'Ingyu Hwhang',
-                            'Hexmind': 'Tomasz Skowroński',
-                            'drmaas': 'Dan Maas']
+                def devs = [
+                        'RobWin'     : 'Robert Winkler',
+                        'storozhukBM': 'Bogdan Storozhuk',
+                        'Romeh'      : 'Mahmoud Romeh',
+                        'dlsrb6342'  : 'Ingyu Hwhang',
+                        'Hexmind'    : 'Tomasz Skowroński',
+                        'drmaas'     : 'Dan Maas',
+                        'kworkbee'   : 'Jiwon Jeon',
+                ]
                 def root = asNode()
 
                 root.appendNode('name', "${projectArtifactId}")
@@ -66,6 +69,7 @@ dependencies {
         api project(":resilience4j-spring-boot2")
         api project(":resilience4j-spring-boot3")
         api project(":resilience4j-spring-cloud2")
+        api project(":resilience4j-spring-cloud3")
         api project(":resilience4j-feign")
         api project(":resilience4j-timelimiter")
         api project(":resilience4j-rxjava2")
